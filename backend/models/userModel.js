@@ -1,3 +1,6 @@
+
+
+
 import mongoose from "mongoose";
 const userSchema = {
   username: { type: String, required: true },
