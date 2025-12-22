@@ -1,20 +1,10 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import Header from './Header/Header'
-import HomeMain from './Main/HomeMain'
-import Signup from './Signup/Signup'
-import { AuthContext, AuthProvider } from './context/AuthContext'
-import Login from './Login/Login'
-import { useContext } from 'react'
-
-
-function ProtectRoute({ children }) {
-  const { token } = useContext(AuthContext)
-  if (!token) return <Navigate to='/login' />
-  return children
-
-}
-
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Header/Header";
+import HomeMain from "./Main/HomeMain";
+import Signup from "./Signup/Signup";
+import { AuthContext, AuthProvider } from "./context/AuthContext";
+import Login from "./Login/Login";
 
 function App() {
   return (
@@ -22,13 +12,13 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/' element={<ProtectRoute><HomeMain /></ProtectRoute>} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
+          <Route path="/" element={<HomeMain />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;
