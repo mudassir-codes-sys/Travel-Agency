@@ -41,7 +41,7 @@ function Header() {
 
 
             {showLogo ? (
-                // Home page: mobile + desktop dono pe show
+           
                 <img
                     src="https://pngimg.com/uploads/plane/plane_PNG101255.png"
                     width="70"
@@ -49,7 +49,7 @@ function Header() {
                     className="block"
                 />
             ) : (
-                // Baaki pages: desktop (md+) pe show, mobile pe hide
+               
                 <img
                     src="https://pngimg.com/uploads/plane/plane_PNG101255.png"
                     width="70"
